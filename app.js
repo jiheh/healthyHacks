@@ -1,8 +1,14 @@
-let articleURL = 'http://www.burrardstreetjournal.com/obama-refusing-to-leave-if-trump-elected/';
+chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
+  const articleURL = tabs[0].url;
 
-document.getElementById('result').textContent = "trying to do something";
-
-fetch('https://graph.facebook.com/?id=' + articleURL)
-.then(article => article.json())
-.then(res => document.getElementById('result').textContent = res.share['share_count'])
-.catch(alert);
+	fetch('https://graph.facebook.com/?id=' + articleURL)
+	.then(article => article.json())
+	.then(res => {
+		if (res.share['share_count'] > 300000) {
+			document.getElementById('result').textContent = 'Article has been spreading suspiciously like wildfire!'
+		} else {
+			document.getElementById('result').textContent = 'Article seems less suspicious...'
+		}
+	})
+	.catch(alert);
+});
