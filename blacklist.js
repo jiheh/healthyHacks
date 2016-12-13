@@ -33,7 +33,8 @@ const blacklist = [
   'thenewsnerd.com',
   'thepoliticalinsider.com',
   'theuspatriot.com',
-  'witscience.org'
+  'witscience.org',
+  'worldpoliticus.com'
 ];
 
 export default blacklist;
