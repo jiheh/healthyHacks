@@ -3,9 +3,6 @@ let articleURL = 'http://www.burrardstreetjournal.com/obama-refusing-to-leave-if
 document.getElementById('result').textContent = "trying to do something";
 
 fetch('https://graph.facebook.com/?id=' + articleURL)
-.then(article => JSON.parse(article).share['share_count'])
-.then(result => {
-	alert(result)
-	document.getElementById('result').textContent = result;
-	})
-.catch(alert)
+.then(article => article.json())
+.then(res => document.getElementById('result').textContent = res.share['share_count'])
+.catch(alert);
