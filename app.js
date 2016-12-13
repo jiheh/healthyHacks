@@ -5,7 +5,7 @@ chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 	.then(article => article.json())
 	.then(res => {
 		if (res.share['share_count'] > 300000) {
-			document.getElementById('result').textContent = 'Article has been spreading suspiciously like wildfire!'
+			document.getElementById('result').textContent = `Article has been spreading suspiciously like wildfire! ${res.share['share_count']}`
 		} else {
 			document.getElementById('result').textContent = 'Article seems less suspicious...'
 		}
