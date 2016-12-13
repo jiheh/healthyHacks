@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Healthy Hacks",
-  "description": "This extension shows a more nutritional alternative to your online meal selection",
+  "name": "Wildfire News",
+  "description": "This extension shows which news sites are reliable",
   "version": "1.0.0",
 
   "browser_action": {
